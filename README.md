@@ -66,12 +66,15 @@ Add your new features to features folder
 ### 5. Run your tests
 You can choose between multiple configs & environments to run your tests.
 
-### Basic Command
+### 6. Basic Command
 ```bash
 mvn clean verify -Ddevice=android.real -Denv=test
 ```
 With the basic command you can run your test under your real android device.
 You must add on [android.real.properties](src/test/resources/device/android.real.properties) deviceName and udid.
+
+### 7. Cucumber Report
+After each execution a cucumber report can be found at [overview-features.html](target/cucumber-html-reports/cucumber-html-reports/overview-features.html)
 
 ### Farm testing
 You can run the same tests under multiple devices (Android , IOS, Real and Emulators).

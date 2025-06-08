@@ -13,17 +13,6 @@ public class Menu {
         this.validations = new Validation(driver);
     }
 
-    public boolean allItemsVisible() {
-        return menuLocators.allItems.isDisplayed() &&
-                menuLocators.webview.isDisplayed() &&
-                menuLocators.qrCodeScanner.isDisplayed() &&
-                menuLocators.geoLocation.isDisplayed() &&
-                menuLocators.drawing.isDisplayed() &&
-                menuLocators.about.isDisplayed() &&
-                menuLocators.logout.isDisplayed() &&
-                menuLocators.resetAppState.isDisplayed();
-    }
-
     public void tapLogout() {
         menuLocators.logout.click();
     }
@@ -40,4 +29,16 @@ public class Menu {
         this.validations.isVisible(menuLocators.menuIcon);
         this.validations.isVisible(menuLocators.cartIcon);
     }
+
+    public void subMenuItemsAreVisible() {
+        this.validations.isVisible(menuLocators.allItems);
+        this.validations.isVisible(menuLocators.webview);
+        this.validations.isVisible(menuLocators.qrCodeScanner);
+        this.validations.isVisible(menuLocators.geoLocation);
+        this.validations.isVisible(menuLocators.drawing);
+        this.validations.isVisible(menuLocators.about);
+        this.validations.isVisible(menuLocators.logout);
+        this.validations.isVisible(menuLocators.resetAppState);
+    }
+
 }
