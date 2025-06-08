@@ -1,0 +1,57 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
+<suite name="DeviceFarmTests" parallel="tests" thread-count="9">
+    <test name="XiaomiRealTest">
+        <parameter name="device" value="xiaomi.real"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.ParallelTestRunner"/>
+        </classes>
+    </test>
+    <test name="SamsungRealTest">
+        <parameter name="device" value="samsung.real"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.ParallelTestRunner"/>
+        </classes>
+    </test>
+    <test name="AndroidEmulator1Test">
+        <parameter name="device" value="android.emulator1"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.ParallelTestRunner"/>
+        </classes>
+    </test>
+    <test name="AndroidEmulator2Test">
+        <parameter name="device" value="android.emulator2"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.ParallelTestRunner"/>
+        </classes>
+    </test>
+    <test name="iPhone1RealTest">
+        <parameter name="device" value="iphone1.real"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.ParallelTestRunner"/>
+        </classes>
+    </test>
+    <test name="iPhone2RealTest">
+        <parameter name="device" value="iphone2.real"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.ParallelTestRunner"/>
+        </classes>
+    </test>
+    <test name="iPhone3RealTest">
+        <parameter name="device" value="iphone3.real"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.ParallelTestRunner"/>
+        </classes>
+    </test>
+    <test name="iOSSimulator1Test">
+        <parameter name="device" value="ios.simulator1"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.ParallelTestRunner"/>
+        </classes>
+    </test>
+    <test name="iOSSimulator2Test">
+        <parameter name="device" value="ios.simulator2"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.ParallelTestRunner"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
+<suite name="SingleDeviceTest" thread-count="1">
+    <test name="AndroidRealTest">
+        <parameter name="device" value="android.real"/>
+        <classes>
+            <class name="com.george.appiumtesting.runners.TestRunner"/>
+        </classes>
+    </test>
+</suite>
