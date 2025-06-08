@@ -10,6 +10,7 @@ public class CommonSteps {
 
     @Given("The application loads properly")
     public void applicationLoads() {
-        System.out.println("✅ App loaded");
+        System.out.println("App loaded");
+        System.out.println("Check the logo etc with proper locators");
     }
 }

@@ -45,6 +45,20 @@ Open the application under test.
 
 Click on UI elements to review the AccessibilityID.
 
+For the parameters use the following in inspector
+```bash
+{
+"platformName": "Android",
+"appium:deviceName": "yhwsonr8beba5pqo",
+"appium:udid": "yhwsonr8beba5pqo",
+"appium:automationName": "UiAutomator2",
+"appium:noReset": false,
+"appium:fullReset": false,
+"appium:autoGrantPermissions": true,
+"appium:appWaitActivity": "*"
+}
+```
+
 ### 4. Implement your tests
 Follow BDD and declarative scenarios style
 Add your new features to features folder
