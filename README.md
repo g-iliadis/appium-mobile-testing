@@ -77,7 +77,7 @@ You must add on [android.real.properties](src/test/resources/device/android.real
 After each execution a cucumber report can be found at [overview-features.html](target/cucumber-html-reports/cucumber-html-reports/overview-features.html)
 
 ### 8. CI/CD Pipeline
-On every push for branches (Main, Develop) & on every PR merge, a ci/cd pipeline is executed with Github actions
+On every push for branches (Main, Develop) & on every PR merge on main, a ci/cd pipeline is executed with Github actions
 runs on an android emulator with android API 34. Uses only test apk version which is under mobile_apps/test.apk
 You can add also more parameters on the appium.yml to execute also on demo.
 
