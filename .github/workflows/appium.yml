@@ -26,6 +26,15 @@ jobs:
           distribution: temurin
           java-version: '21'
       - uses: android-actions/setup-android@v3
+
+      - name: Upgrade Android SDK cmdline-tools
+        run: |
+          mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools/latest"
+          cd "$ANDROID_SDK_ROOT/cmdline-tools/latest"
+          curl -sSLo sdk-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+          unzip -q sdk-tools.zip
+          rm sdk-tools.zip
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -84,7 +93,7 @@ jobs:
           path: |
             mobile_apps/target/cucumber-html-reports/cucumber-html-reports/
             appium.log
-      
+
 
       - uses: actions/upload-artifact@v4
         if: failure()
