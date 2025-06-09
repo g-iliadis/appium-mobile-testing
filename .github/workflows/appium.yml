@@ -76,12 +76,15 @@ jobs:
           force-avd-creation: false
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot-save -no-snapshot-load
-          script: |
+          run: |
             appium --port ${{ env.APPIUM_PORT }} >appium.log 2>&1 &
             APPIUM_PID=$!
             adb wait-for-device
             adb shell input keyevent 82
             APK_PATH="$GITHUB_WORKSPACE/mobile_apps/${APP_ENV}.apk"
+            echo "DEBUG: APK_PATH resolved to: $APK_PATH"
+            echo "DEBUG: APP_ENV is: $APP_ENV"
+            echo "DEBUG: GITHUB_WORKSPACE is: $GITHUB_WORKSPACE"
             if [ ! -f "$APK_PATH" ]; then echo "::error::Expected $APK_PATH but it doesn't exist."; kill $APPIUM_PID; exit 1; fi
             adb install -r "$APK_PATH"
             mvn -B -f mobile_apps/pom.xml clean verify -Ddevice=android.emulator -Denv=${APP_ENV} --no-transfer-progress || TEST_EXIT_CODE=$?
