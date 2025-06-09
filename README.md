@@ -76,6 +76,13 @@ You must add on [android.real.properties](src/test/resources/device/android.real
 ### 7. Cucumber Report
 After each execution a cucumber report can be found at [overview-features.html](target/cucumber-html-reports/cucumber-html-reports/overview-features.html)
 
+### 8. CI/CD Pipeline
+On every push for branches (Main, Develop) & on every PR merge on main, a ci/cd pipeline is executed with Github actions
+runs on an android emulator with android API 34. Uses only test apk version which is under mobile_apps/test.apk
+You can add also more parameters on the appium.yml to execute also on demo.
+
+After each run you can download the build artifacts that contain the results in cucumber report format. 
+
 ### Farm testing
 You can run the same tests under multiple devices (Android , IOS, Real and Emulators).
 After connected all preferred devices with your testing server/computer.
