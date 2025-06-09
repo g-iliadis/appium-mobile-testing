@@ -82,11 +82,7 @@ jobs:
             adb wait-for-device
             adb shell input keyevent 82
             APK_PATH="$GITHUB_WORKSPACE/mobile_apps/${APP_ENV}.apk"
-            if [ ! -f "$APK_PATH" ]; then
-              echo "::error::Expected $APK_PATH but it doesn't exist."
-              kill $APPIUM_PID
-              exit 1
-            fi
+            if [ ! -f "$APK_PATH" ]; then echo "::error::Expected $APK_PATH but it doesn't exist."; kill $APPIUM_PID; exit 1; fi
             adb install -r "$APK_PATH"
             mvn -B -f mobile_apps/pom.xml clean verify -Ddevice=android.emulator -Denv=${APP_ENV} --no-transfer-progress || TEST_EXIT_CODE=$?
             kill $APPIUM_PID || true
