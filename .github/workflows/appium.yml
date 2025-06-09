@@ -76,7 +76,7 @@ jobs:
           force-avd-creation: false
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot-save -no-snapshot-load
-          run: |
+          script: |
             appium --port ${{ env.APPIUM_PORT }} >appium.log 2>&1 &
             APPIUM_PID=$!
             adb wait-for-device
