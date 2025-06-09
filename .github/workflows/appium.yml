@@ -83,7 +83,8 @@ jobs:
         with:
           name: cucumber-reports-${{ github.run_number }}-${{ matrix.app_env }}
           path: |
-            mobile_apps/target/cucumber-html-reports/cucumber-html-reports/
+            target/cucumber-html-reports/cucumber-html-reports/
+            target/cucumber-html-reports/cucumber-report.json
             appium.log
 
 
