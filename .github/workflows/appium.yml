@@ -2,9 +2,9 @@ name: Mobile App Tests
 
 on:
   push:
-    branches: [main, develop]
+    branches: [ main, develop ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   test:
@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 45
     strategy:
       matrix:
-        app_env: [test, demo]
+        app_env: [ test ]
     env:
       API_LEVEL: 34
       APPIUM_PORT: 4725
@@ -60,7 +60,7 @@ jobs:
           avd-name: test_avd_${{ env.API_LEVEL }}
           force-avd-creation: false
           disable-animations: true
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot-save -no-snapshot-load
           script: |
             appium --port ${{ env.APPIUM_PORT }} >appium.log 2>&1 &
             APPIUM_PID=$!
@@ -80,11 +80,11 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: test-results-${{ github.run_number }}-${{ matrix.app_env }}
+          name: cucumber-reports-${{ github.run_number }}-${{ matrix.app_env }}
           path: |
-            mobile_apps/target/**/surefire-reports/
-            mobile_apps/target/**/failsafe-reports/
+            mobile_apps/target/cucumber-html-reports/cucumber-html-reports/
             appium.log
+      
 
       - uses: actions/upload-artifact@v4
         if: failure()
